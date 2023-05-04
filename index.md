@@ -1,4 +1,4 @@
-# Title of Your Project
+# Campus Life Graph Applications
 
 **CISC320 Spring 2023 Lesson 14 - Graph Applications**
 
@@ -7,6 +7,11 @@ Group Members:
 * Shreya Pamulapati (shrey@udel.edu)
 
 Description of project
+
+We chose the theme "Campus Life" for our graph applications because 
+the topic is relatable to us and provides an endless number of 
+related problems to solve. Our first problem, done by Rachel Robins, is
+a friendship graph of students in Sparc.
 
 ## Installation Code
 
@@ -20,16 +25,19 @@ $> pip install networkx
 import networkx as nx
 ```
 
-# First Problem Title
+# Sparc Friendship Graph
 
 **Informal Description**: 
+I created a friendship graph of all the students in Sparc at a particular moment in time. The
+nodes represent students and the vertices represent a friendship.
 
 > **Formal Description**:
->  * Input:
+>  * Input: 
 >  * Output:
 
-**Graph Problem/Algorithm**: [DFS/BFS/SSSP/APSP/MST]
+**Graph Problem/Algorithm**: DFS
 
+The problem is to determine if everyone in the room is connected through someone one else by performing a Depth-First Traversal.
 
 **Setup code**:
 
