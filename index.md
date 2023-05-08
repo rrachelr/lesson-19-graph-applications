@@ -1,6 +1,6 @@
-# Title of Your Project
+# Campus Life
 
-**CISC320 Spring 2023 Lesson 14 - Graph Applications**
+**CISC320 Spring 2023 Lesson 19 - Graph Applications**
 
 Group Members:
 * Rachel Robins (rrobins@udel.edu)
@@ -20,7 +20,7 @@ $> pip install networkx
 import networkx as nx
 ```
 
-# First Problem Title
+# Friendship Graph
 
 **Informal Description**: 
 
@@ -52,3 +52,34 @@ import networkx as nx
 
 **Interpretation of Results**:
 
+# Campus Map
+
+**Informal Description**: 
+
+> **Formal Description**:
+>  * Input:
+>  * Output:
+
+**Graph Problem/Algorithm**: [DFS/BFS/SSSP/APSP/MST]
+
+
+**Setup code**:
+
+```python
+```
+
+**Visualization**:
+
+![Image goes here](Relative image filename goes here)
+
+**Solution code:**
+
+```python
+```
+
+**Output**
+
+```
+```
+
+**Interpretation of Results**:
