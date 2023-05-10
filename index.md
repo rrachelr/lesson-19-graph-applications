@@ -22,11 +22,11 @@ import networkx as nx
 
 # Friendship Graph
 
-**Informal Description**: 
+**Informal Description**:
 
 > **Formal Description**:
 >  * Input:
->  * Output:
+>  * Output: 
 
 **Graph Problem/Algorithm**: [DFS/BFS/SSSP/APSP/MST]
 
@@ -52,15 +52,16 @@ import networkx as nx
 
 **Interpretation of Results**:
 
+
 # Campus Map
 
-**Informal Description**: 
+**Informal Description**: Find the shortest path to get from Alison Hall (AL) to Willard Hall (WI). Return that total distance.
 
 > **Formal Description**:
->  * Input:
+>  * Input: start = AL , finish = WI
 >  * Output:
 
-**Graph Problem/Algorithm**: [DFS/BFS/SSSP/APSP/MST]
+**Graph Problem/Algorithm**: [BFS]
 
 
 **Setup code**:
