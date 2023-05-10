@@ -28,12 +28,12 @@ import networkx as nx
 # A Sparc Can Start a Fire
 
 **Informal Description**: 
-The problem: You are a student who has just entered Sparc Lab in Smith Hall. The room is full of familiar faces from your classes and around campus. Because the department is relatively small, you decide you want to find out if there is a connection between every student in the room through a friendship with someone else.
+The problem: You are a student who has just entered Sparc Lab in Smith Hall. The room is full of unfamiliar faces and you nervously sit down in the last empty swivel chair. It seems like everyone is already part of a group, causing you to feel a little intimidated. While lamenting your lack of friends, you decide to find out how just many friend groups exist among your fellow students in Sparc.
 
 > **Formal Description**:
->  * Input: An undirected, and unweighted graph with at least 20 vertices. The vertices are students at the University of Delaware currently in Sparc, and the edges are a friendship between
+>  * Input: A disconnected, undirected, and unweighted graph with at least 20 vertices. The vertices are students at the University of Delaware currently in Sparc, and the edges are a friendship between
 two students.
->  * Output: If there is a connection between every student, a connected graph of every student in Sparc. Otherwise, a disconnected graph with as many connections among students as possible.
+>  * Output: The number of connected components that exist within the graph.
 
 **Graph Problem/Algorithm**: DFS
 
@@ -48,7 +48,23 @@ two students.
 
 **Solution code:**
 
-```python
+```def DFS(graph, visited, v):
+    visited.append(v)
+    for i in graph[v].keys():
+        if i not in visited:
+            visited.append(i)
+            DFS(graph, visited, i)
+
+def friendship_circles(graph, n):
+    num_circles = 0
+    visited = []
+    for i in graph.keys():
+        if i not in visited:
+            DFS(graph, visited, i)
+            num_circles += 1
+    return num_circles
+
+print(friendship_circles(graph, len(graph)))
 ```
 
 **Output**
