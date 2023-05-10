@@ -1,6 +1,6 @@
 # Campus Life Graph Applications
 
-**CISC320 Spring 2023 Lesson 14 - Graph Applications**
+**CISC320 Spring 2023 Lesson 19 - Graph Applications**
 
 Group Members:
 * Rachel Robins (rrobins@udel.edu)
@@ -25,19 +25,17 @@ $> pip install networkx
 import networkx as nx
 ```
 
-# Sparc Friendship Graph
+# A Sparc Can Start a Fire
 
 **Informal Description**: 
-I created a friendship graph of all the students in Sparc at a particular moment in time. The
-nodes represent students and the vertices represent a friendship.
+The problem: You are a student who has just entered Sparc Lab in Smith Hall. The room is full of familiar faces from your classes and around campus. Because the department is relatively small, you decide you want to find out if there is a connection between every student in the room through a friendship with someone else.
 
 > **Formal Description**:
->  * Input: 
->  * Output:
+>  * Input: An undirected, and unweighted graph with at least 20 vertices. The vertices are students at the University of Delaware currently in Sparc, and the edges are a friendship between
+two students.
+>  * Output: If there is a connection between every student, a connected graph of every student in Sparc. Otherwise, a disconnected graph with as many connections among students as possible.
 
 **Graph Problem/Algorithm**: DFS
-
-The problem is to determine if everyone in the room is connected through someone one else by performing a Depth-First Traversal.
 
 **Setup code**:
 
