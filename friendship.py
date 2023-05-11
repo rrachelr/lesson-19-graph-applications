@@ -20,37 +20,38 @@ decent solution.
 '''
 
 graph = {
-    'Rachel': {'Jon': {}},
+    'Rachel': {'Jon': {}, 'Sean': {}, 'Minji': {}},
     'Will': {'Mycah': {}, 'Ocean': {}, 'Tommy': {}},
-    'Carley': {'Megan': {}, 'Minji': {}},
+    'Carley': {'Megan': {}, 'Minji': {}, 'Matt': {}},
     'Mycah': {'Will': {}, 'Abbey': {}},
     'Jon': {'Rachel': {}, 'Simon': {}, 'Andrew': {}, 'Max': {}},
     'Ocean': {'Will': {}},
-    'Andrew': {'Jon': {}, 'Trevor': {}, 'Max': {}, 'Sarah': {}},
+    'Andrew': {'Jon': {}, 'Trevor': {}, 'Max': {}, 'Sarah': {}, 'Rachel': {}},
     'Sarah': {'Andrew': {}, 'Trevor': {}},
-    'Trevor': {'Matt': {}, 'Sarah': {}, 'Andrew': {}},
+    'Trevor': {'Matt': {}, 'Sarah': {}, 'Andrew': {}, 'Minji':{}},
     'Max': {'Andrew': {}, 'Jon': {}},
-    'Axel': {},
+    'Axel': {'Lucas': {}},
     'James': {'Simon': {}},
     'Simon': {'James': {}, 'Jon': {}},
     'Evan': {'Megan': {}, 'Minji': {}, 'Sean': {}},
-    'Sean': {'Evan': {}},
+    'Sean': {'Evan': {}, 'Rachel': {}},
     'Tommy': {'Abbey': {}, 'Will': {}},
     'Megan': {'Minji': {}, 'Carley': {}, 'Evan': {}},
     'Abbey': {'Mycah': {}, 'Tommy': {}},
     'Matt': {'Trevor': {}},
-    'Minji': {'Evan': {}, 'Megan': {}, 'Carley': {}, 'James': {}},
+    'Minji': {'Evan': {}, 'Megan': {}, 'Carley': {}, 'James': {}, 'Rachel': {}},
     'James': {'Minji': {}},
     'Ryan': {'Shreya': {}, 'Sam': {}},
-    'Sam': {'Mercedes': {}, 'Shreya': {}, 'Ryan': {}},
+    'Sam': {'Shreya': {}, 'Ryan': {}},
     'Shreya': {'Ryan': {}, 'Mercedes': {}, 'Sam': {}},
-    'Mercedes': {'Shreya': {}, 'Sam': {}},
-    'Lucas': {},
+    'Mercedes': {'Shreya': {}},
+    'Lucas': {'Axel': {}},
+    'You': {}
 }
 
 G = nx.from_dict_of_dicts(graph)
 
-pos = nx.spring_layout(G, seed=1)
+pos = nx.spring_layout(G, seed=2)
 plt.figure(1, figsize=(12,12))
 nx.draw_networkx(G, pos, node_size=60, node_color='yellow', with_labels=True)
 plt.savefig("init_graph.png")
