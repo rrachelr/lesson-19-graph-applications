@@ -128,7 +128,7 @@ as a single component.
 
 # Campus Map
 
-**Informal Description**: Find the shortest path to get from Alison Hall (AL) to Willard Hall (WI). Return that path of halls taken.
+**Informal Description**: Below is a weighted and directed graph of some of the bulidings at University of Delaware. You are running late to your next class which is in Willard Hall. Currently, you are at Alison Hall and want to make it to your class on time. Find the shortest path to get from Alison Hall (AL) to Willard Hall (WI). Return that path of halls that you take.
 
 > **Formal Description**:
 >  * Input: start = AL , finish = WI
@@ -138,7 +138,7 @@ as a single component.
 
 **Setup code**:
 
-```python
+```
 G = nx.Graph()
 
 # the campus buildings
@@ -171,31 +171,38 @@ finish = input("Enter the second building using the first two letters of buildin
 
 # marking the edges, nodes, and labels
 nx.draw_edges(G, position, width = 1)
-nx.draw_nodes(G, position, width = 300)
 nx.draw_labels(G, position, font_size = 15)
+
+pos = nx.spring_layout(G, seed=2)
+plt.figure(1, figsize=(12,12))
+nx.draw_networkx(G, pos, node_size = 60, node_color='pink', with_labels = True)
+plt.savefig("init_map.png")
 
 plt.show()
 ```
 
 **Visualization**:
 
-![Image goes here](Relative image filename goes here)
+![Alt text](Relative image filename goes here)
 
 **Solution code:**
 
-```python
-distance = []
-tree = nx.bfs_tree(G, start.upper())
-path = nx.shortest(tree, source = start.upper())
+```
+def BFS(G):
+    distance = []
+    tree = nx.bfs_tree(G, start.upper())
+    path = nx.shortest(tree, source = start.upper())
 
-for i in range(0, len(path) - 1):
-    distance.append(path[i])
-    distance.append(path[i + 1])
+    for i in range(0, len(path) - 1):
+        distance.append(path[i])
+        distance.append(path[i + 1])
+    return distance
 ```
 
 **Output**
 
 ```
+[AL, BR, GO, SM, KI, WI]
 ```
 
-**Interpretation of Results**:
+**Interpretation of Results**: The output is a list of all the halls that should to be taken to go from Alison Hall to Willard Hall. First, we start off at Alison Hall and find the shortest path which is 10 to Brown Lab. Next, Brow Lab to Gore Hall which is a distance of 10. Then, from Gore Hall to Smith Hall which has a weight of 5, along with Smith to Kirkbride. Lastly, Kirkbride to Willard with a distance of 30. This is the path to take to make it to class on time. 
