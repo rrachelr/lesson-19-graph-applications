@@ -83,7 +83,7 @@ plt.savefig("init_graph.png")
 
 **Visualization**:
 
-![./init_graph.png]
+![Alt text](/init_graph.png)
 
 **Solution code:**
 
