@@ -4,44 +4,55 @@ import matplotlib.pyplot as plt
 '''
 Made by Rachel Robins, rrobins@udel.edu
 
-The problem: You are a student who has just entered Sparc Lab 
-in Smith Hall. The room is full of familiar faces from your 
-classes and around campus. Because the department is relatively 
-small, you decide you want to find out if there is a connection 
-between every student in the room through a friendship with 
-someone else.
+The problem: You are a student who has just entered 
+Sparc Lab in Smith Hall. The room is full of unfamiliar 
+faces and you nervously sit down in the last empty swivel 
+chair. It seems like everyone is already part of a group, 
+causing you to feel a little intimidated. While lamenting 
+your lack of friends, you decide to find out how just many 
+friend groups exist among your fellow students in Sparc.
 
 I used networkx to create the graph and matplotlib to display it.
+
+Disclaimer: The vertices include some names of my real-life friends in Sparc, 
+however the friendships in the graph are very inaccurate for the sake of a 
+decent solution.
 '''
 
 graph = {
-    'Rachel': {'Jonathon': {}, 'Axel': {}},
+    'Rachel': {'Jon': {}},
     'Will': {'Mycah': {}, 'Ocean': {}, 'Tommy': {}},
-    'Carley': {'Megan': {}},
+    'Carley': {'Megan': {}, 'Minji': {}},
     'Mycah': {'Will': {}, 'Abbey': {}},
-    'Jonathon': {'Rachel': {}, 'Simon': {}, 'Andrew': {}, 'Max': {}},
-    'Ocean': {'Will': {}, 'Tommy': {}},
-    'Andrew': {'Jonathon': {}, 'Trevor': {}, 'Max': {}, 'Yasmin': {}},
-    'Yasmin': {'Andrew': {}, 'Trevor': {}},
-    'Trevor': {'Matt': {}, 'Yasmin': {}, 'Andrew': {}},
-    'Max': {'Andrew': {}, 'Jonathon': {}},
-    'Axel': {'Rachel': {}},
-    'Blade': {'Simon': {}},
-    'Simon': {'Blade': {}, 'Jonathon': {}},
+    'Jon': {'Rachel': {}, 'Simon': {}, 'Andrew': {}, 'Max': {}},
+    'Ocean': {'Will': {}},
+    'Andrew': {'Jon': {}, 'Trevor': {}, 'Max': {}, 'Sarah': {}},
+    'Sarah': {'Andrew': {}, 'Trevor': {}},
+    'Trevor': {'Matt': {}, 'Sarah': {}, 'Andrew': {}},
+    'Max': {'Andrew': {}, 'Jon': {}},
+    'Axel': {},
+    'James': {'Simon': {}},
+    'Simon': {'James': {}, 'Jon': {}},
     'Evan': {'Megan': {}, 'Minji': {}, 'Sean': {}},
     'Sean': {'Evan': {}},
-    'Tommy': {'Abbey': {}, 'Will': {}, 'Ocean': {}},
+    'Tommy': {'Abbey': {}, 'Will': {}},
     'Megan': {'Minji': {}, 'Carley': {}, 'Evan': {}},
     'Abbey': {'Mycah': {}, 'Tommy': {}},
     'Matt': {'Trevor': {}},
-    'Minji': {'Evan': {}, 'Megan': {}},
+    'Minji': {'Evan': {}, 'Megan': {}, 'Carley': {}, 'James': {}},
+    'James': {'Minji': {}},
+    'Ryan': {'Shreya': {}, 'Sam': {}},
+    'Sam': {'Mercedes': {}, 'Shreya': {}, 'Ryan': {}},
+    'Shreya': {'Ryan': {}, 'Mercedes': {}, 'Sam': {}},
+    'Mercedes': {'Shreya': {}, 'Sam': {}},
+    'Lucas': {},
 }
 
 G = nx.from_dict_of_dicts(graph)
 
-pos = nx.spring_layout(G, seed=4)
-plt.figure(1, figsize=(5,5))
-nx.draw_networkx(G, pos, node_size=60, with_labels=True)
+pos = nx.spring_layout(G, seed=1)
+plt.figure(1, figsize=(12,12))
+nx.draw_networkx(G, pos, node_size=60, node_color='yellow', with_labels=True)
 plt.savefig("init_graph.png")
 
 #Solution
