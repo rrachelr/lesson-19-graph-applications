@@ -44,26 +44,33 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 graph = {
-    'Rachel': {'Jonathon': {}, 'Axel': {}},
+    'Rachel': {'Jon': {}, 'Sean': {}, 'Minji': {}},
     'Will': {'Mycah': {}, 'Ocean': {}, 'Tommy': {}},
-    'Carley': {'Megan': {}},
+    'Carley': {'Megan': {}, 'Minji': {}, 'Matt': {}},
     'Mycah': {'Will': {}, 'Abbey': {}},
-    'Jonathon': {'Rachel': {}, 'Simon': {}, 'Andrew': {}, 'Max': {}},
-    'Ocean': {'Will': {}, 'Tommy': {}},
-    'Andrew': {'Jonathon': {}, 'Trevor': {}, 'Max': {}, 'Yasmin': {}},
-    'Yasmin': {'Andrew': {}, 'Trevor': {}},
-    'Trevor': {'Matt': {}, 'Yasmin': {}, 'Andrew': {}},
-    'Max': {'Andrew': {}, 'Jonathon': {}},
-    'Axel': {'Rachel': {}},
-    'Blade': {'Simon': {}},
-    'Simon': {'Blade': {}, 'Jonathon': {}},
+    'Jon': {'Rachel': {}, 'Simon': {}, 'Andrew': {}, 'Max': {}},
+    'Ocean': {'Will': {}},
+    'Andrew': {'Jon': {}, 'Trevor': {}, 'Max': {}, 'Sarah': {}, 'Rachel': {}},
+    'Sarah': {'Andrew': {}, 'Trevor': {}},
+    'Trevor': {'Matt': {}, 'Sarah': {}, 'Andrew': {}, 'Minji':{}},
+    'Max': {'Andrew': {}, 'Jon': {}},
+    'Axel': {'Lucas': {}},
+    'James': {'Simon': {}},
+    'Simon': {'James': {}, 'Jon': {}},
     'Evan': {'Megan': {}, 'Minji': {}, 'Sean': {}},
-    'Sean': {'Evan': {}},
-    'Tommy': {'Abbey': {}, 'Will': {}, 'Ocean': {}},
+    'Sean': {'Evan': {}, 'Rachel': {}},
+    'Tommy': {'Abbey': {}, 'Will': {}},
     'Megan': {'Minji': {}, 'Carley': {}, 'Evan': {}},
     'Abbey': {'Mycah': {}, 'Tommy': {}},
     'Matt': {'Trevor': {}},
-    'Minji': {'Evan': {}, 'Megan': {}},
+    'Minji': {'Evan': {}, 'Megan': {}, 'Carley': {}, 'James': {}, 'Rachel': {}},
+    'James': {'Minji': {}},
+    'Ryan': {'Shreya': {}, 'Sam': {}},
+    'Sam': {'Shreya': {}, 'Ryan': {}},
+    'Shreya': {'Ryan': {}, 'Mercedes': {}, 'Sam': {}},
+    'Mercedes': {'Shreya': {}},
+    'Lucas': {'Axel': {}},
+    'You': {}
 }
 
 G = nx.from_dict_of_dicts(graph)
@@ -76,7 +83,7 @@ plt.savefig("init_graph.png")
 
 **Visualization**:
 
-![Image goes here](Relative image filename goes here)
+![./init_graph.png]
 
 **Solution code:**
 
