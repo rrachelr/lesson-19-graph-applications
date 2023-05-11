@@ -110,8 +110,12 @@ print(friendship_circles(graph, len(graph)))
 **Output**
 
 ```
-3
+5
 ```
 
 **Interpretation of Results**:
+The result is the number of connected components within
+the graph. In this case, the number is 5, because there are
+4 connected components and one node on its own, which counts
+as a single component.
 
